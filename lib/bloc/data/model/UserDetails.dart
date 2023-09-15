@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:equatable/equatable.dart';
 class UserDetails
 {
     String? name;
@@ -29,8 +33,16 @@ Map<String , dynamic> toJson(UserDetails userDetails) {
     return data;
 }
 
+static UserDetails? fromSnapshot(DocumentSnapshot snap) {
+    UserDetails userdetails =   UserDetails(
+        name: snap['name'],
+        email: snap['email'],
+        phone: snap['phone'],
+        address: snap['address'],
+    );
+    return userdetails;
 }
 
 
 
-
+}

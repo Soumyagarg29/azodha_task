@@ -2,19 +2,14 @@ part of 'user_bloc.dart';
 
 abstract class UserDetailsState {} //abstract class 
 
-class UserDetailsInitial extends UserDetailsState {
-  //initial state
-}
+class UserDetailsInitial extends UserDetailsState {} //initial state
 
-class UserDetailsLoading extends UserDetailsState {
-   //show some loading animations 
-}
+class UserDetailsLoading extends UserDetailsState {} //show some loading animations 
+
 
 class UserDetailsLoaded extends UserDetailsState{
-UserDetails userDetails;
-UserDetailsLoaded({required this.userDetails});
-  //write after fetch
-}
+List<UserDetails> userDetails;
+UserDetailsLoaded({required this.userDetails});}//write after fetch
 
 
 class UserDetailsSubmitted extends UserDetailsState{}
